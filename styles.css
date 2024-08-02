@@ -1,0 +1,689 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    position: relative; /* Needed for positioning the pseudo-element */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('photos/gallery16.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.4; /* Adjust the opacity level */
+    z-index: -1; /* Ensure it's behind other content */
+}
+
+
+header {
+    background-color: #003d4c;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-image: url('images/watermark.jpeg'); /* Add your watermark image */
+    background-size: cover; /* Adjust based on how you want the image to fit */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+        /* General navigation styling */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #005b72;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        nav ul li {
+            margin: 0;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li:hover>a {
+            background-color: #007a8d;
+            transform: translateY(-2px);
+        }
+
+        /* Dropdown menu styling */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #005b72;
+            min-width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .dropdown-menu li {
+            border-bottom: 1px solid #004a56;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px;
+            color: #fff;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: #007a8d;
+        }
+
+        /* Show dropdown on hover */
+        .dropdown:hover .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
+            display: block;
+        }
+    
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Gallery Styles */
+#gallery {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+#gallery h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.gallery-item {
+    flex: 1 1 300px;
+    max-width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Contact Section */
+#contact {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #003d4c;
+    /* Dark blue text */
+}
+
+/* Account Section */
+#account {
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#account h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.account-forms {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.account-forms .login-form,
+.account-forms .signup-form {
+    width: 100%;
+    max-width: 360px;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.account-forms .login-form:hover,
+.account-forms .signup-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* About Us Section */
+#about-us {
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 100px auto 40px; /* Adjusted for fixed header */
+    text-align: center;
+    position: relative; /* Needed for absolute positioning of the image */
+}
+
+.about-container {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#about-us h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #003d4c; /* Dark blue text */
+}
+
+#about-us p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about-content p {
+    flex: 1;
+    margin-right: 20px; /* Space between text and image */
+}
+
+.about-image {
+    width: 150px; /* Adjust the size as needed */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Enhanced Button Styles */
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#featured-images {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image-gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.image-gallery img,
+.service-image {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+#services {
+    padding: 20px 0;
+    /* Adjusted padding to remove space on the sides */
+    text-align: left;
+    /* Align all text to the left */
+}
+.image-gallery img:hover,
+.service-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#services .service {
+    margin-bottom: 20px;
+    overflow: hidden;
+    /* Clear floats */
+    padding-left: 0;
+    /* Remove padding to align with the left border */
+}
+
+.service-image {
+    width: 150px;
+    height: 100px;
+    float: left;
+    /* Float image to the left */
+    margin-right: 20px;
+    /* Space between image and text */
+    margin-left: 0;
+    /* No left margin */
+    border-radius: 5px;
+    object-fit: cover;
+
+}
+
+.service-description {
+    overflow: hidden;
+    /* Clear the float */
+    margin: 0;
+    /* Remove any margin */
+    padding: 0;
+    /* Remove any padding */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.service-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #003d4c;
+    /* Dark blue */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.service-button:hover {
+    background-color: #005b72;
+    /* Lighter blue */
+    transform: translateY(-2px);
+}
+
+
+
+
+
+
+
+#services {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    text-align: center;
+}
+
+.packages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #003d4c; /* Dark border color */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* White background for the container */
+}
+
+.service-image {
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px; /* Space between image and text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.service-description {
+    flex: 1;
+    text-align: left;
+}
+
+.service-description h3 {
+    margin-top: 0;
+    color: #003d4c; /* Dark blue text */
+}
+
+.service-description p {
+    color: #666; /* Gray text for readability */
+}
+
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+    font-weight: bold;
+    color: #005b72;
+    /* Lighter blue */
+}
+
+form input {
+    padding: 10px;
+    margin: 5px 0 15px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+form input:focus,
+form textarea:focus {
+    border-color: #003d4c;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #003d4c;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #003d4c;
+    /* Dark blue */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+form button:hover {
+    background-color: #005b72;
+    /* Lighter blue */
+    transform: translateY(-2px);
+}
+/* Enhanced Sidebar Styles */
+aside.sidebar {
+    background-color: #ffffff;
+    border: 2px solid #003d4c; /* Dark border */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px; /* Adjust based on your layout */
+    margin: 20px;
+    float: right;
+}
+
+aside.sidebar h3 {
+    font-size: 1.5em;
+    color: #003d4c;
+    margin-bottom: 15px;
+}
+
+aside.sidebar textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    font-size: 1em;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+aside.sidebar button,
+aside.sidebar .share-button,
+aside.sidebar .visit-button,
+aside.sidebar .contact-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+aside.sidebar .submit-review-button {
+    background-color: #003d4c;
+}
+
+aside.sidebar .rate-button {
+    background-color: #005b72;
+}
+
+aside.sidebar .share-button {
+    background-color: #3b5998; /* Facebook color */
+    color: #fff;
+}
+
+aside.sidebar .share-button:hover {
+    background-color: #2d4373;
+}
+
+aside.sidebar .visit-button {
+    background-color: #007bb5; /* Twitter color */
+}
+
+aside.sidebar .visit-button:hover {
+    background-color: #005f8c;
+}
+
+aside.sidebar .contact-button {
+    background-color: #003d4c;
+}
+
+aside.sidebar button:hover {
+    background-color: #005b72;
+    transform: translateY(-2px);
+}
+
+/* Enhanced Contact Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #003d4c;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label {
+    margin-bottom: 5px;
+    color: #005b72;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+    font-size: 1em;
+}
+
+.modal-content form button {
+    padding: 10px;
+    background-color: #003d4c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.modal-content form button:hover {
+    background-color: #005b72;
+    transform: translateY(-2px);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+}
+
+
+
+
+.social-media {
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: #333;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.1em;
+}
+
+.social-media a:hover {
+    color: #005b72;
+    /* Change color on hover */
+}
+
+footer {
+    background-color: #003d4c;
+    /* Dark blue */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-top: 2px solid #005b72;
+    /* Lighter blue */
+}
+/* Footer Logo Section Styles */
+.footer-logo {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ddd;
+}
+
+.logo-container {
+    display: inline-block;
+}
+
+.logo-container img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.footer-logo p {
+    font-size: 0.9em;
+    color: #666;
+}
